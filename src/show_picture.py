@@ -2,7 +2,7 @@ import numpy as np
 from cv2 import cv2 as cv
 
 # 加载彩色灰度图像
-img = cv.imread('data/messi5.jpg', 0)
+img = cv.imread('data/messi5.jpg')
 cv.imshow('image', img)
 cv.waitKey(0)
 cv.destroyAllWindows()
@@ -14,7 +14,15 @@ cv.destroyAllWindows()
     但是，如果将标志指定为cv.WINDOW_NORMAL，则可以调整窗口大小。
     当图像尺寸过大以及向窗口添加跟踪栏时，这将很有帮助。
 """
-cv.namedWindow('messi5', cv.WINDOW_AUTOSIZE)
-cv.imshow('messi5', img)
+# cv.namedWindow('messi5', cv.WINDOW_AUTOSIZE)
+# cv.imshow('messi5', img)
+# cv.waitKey(0)
+# cv.destroyAllWindows()
+"""
+    OpenCV加载的彩色图像处于BGR模式。
+    cv.cvtColor() 转成 rgb 显示会出现颜色错误
+"""
+img2 = cv.cvtColor(img, cv.COLOR_BGR2RGB)
+cv.namedWindow('cvtColor', cv.WINDOW_AUTOSIZE)
+cv.imshow('cvtColor', img2)
 cv.waitKey(0)
-cv.destroyAllWindows()
