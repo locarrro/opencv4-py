@@ -1,6 +1,12 @@
 import numpy as np
 from cv2 import cv2 as cv
 
+"""
+    cv.IMREAD_COLOR： 加载彩色图像。任何图像的透明度都会被忽视。它是默认标志。
+    cv.IMREAD_GRAYSCALE：以灰度模式加载图像
+    cv.IMREAD_UNCHANGED：加载图像，包括alpha通道
+    注意 除了这三个标志，你可以分别简单地传递整数1、0或-1。
+"""
 # 加载彩色灰度图像
 img = cv.imread('data/messi5.jpg')
 cv.imshow('image', img)
