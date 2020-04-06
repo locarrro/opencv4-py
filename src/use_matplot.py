@@ -30,6 +30,7 @@ b, g, r = cv.split(img)
 img2 = cv.merge([r, g, b])
 
 plt.subplot(121); plt.imshow(img)
+plt.xticks([]), plt.yticks([])  # 隐藏 x 轴和 y 轴上的刻度值
 plt.subplot(122); plt.imshow(img2)
 plt.xticks([]), plt.yticks([])  # 隐藏 x 轴和 y 轴上的刻度值
 plt.show()
