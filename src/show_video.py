@@ -11,12 +11,12 @@ while cap.isOpened():
     # gray = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
     # cv.imshow('frame', gray)      #灰色输出
 
-    color = cv.cvtColor(frame, cv.COLOR_BGR2RGB)  # 默认读取是 BGR, 默认输出也是BGR，不用转成 RGB
+    # color = cv.cvtColor(frame, cv.COLOR_BGR2RGB)  # 默认读取是 BGR, 默认输出也是BGR，不用转成 RGB
     # cv.imshow('frame', color)
 
 
     cv.imshow('frame', frame)       # 彩色输出
-    if cv.waitKey(1) == ord('q'):  # cv.waitKey( )
+    if cv.waitKey(1) == ord('q'):  # cv.waitKey()
         break
 cap.release()
 cv.destroyAllWindows()
