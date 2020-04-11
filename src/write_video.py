@@ -24,8 +24,8 @@ while cap.isOpened():
     if not ret:
         print("Can't receive frame (stream end?). Exiting ...")
         break
-    cv.imshow('frame', frame)       # 彩色输出
-    cv.waitKey(int(1000/fps))       # cv.waitKey( )
+    # cv.imshow('frame', frame)       # 彩色输出
+    cv.waitKey(int(1000/fps))  # cv.waitKey( )
     out.write(frame)
 
 cap.release()
