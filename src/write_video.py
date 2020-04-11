@@ -15,7 +15,7 @@ print(fps, width, height)
     如果为 True，编码器期望颜色帧，否则它与灰度帧一起工作。
 """
 fourcc = cv.VideoWriter_fourcc(*'avc1')     # x254不支持，会默认转成 avc1, 不支持 hevc/x265
-out = cv.VideoWriter('build/asaki-hevc.mp4', fourcc, fps, (width, height))
+out = cv.VideoWriter('build/asaki.mp4', fourcc, fps, (width, height))
 
 ret, frame = cap.read()
 while cap.isOpened():
