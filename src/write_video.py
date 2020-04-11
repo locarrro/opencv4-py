@@ -14,7 +14,7 @@ print(fps, width, height)
     然后传递帧率的数量和帧大小。最后一个是颜色标志。
     如果为 True，编码器期望颜色帧，否则它与灰度帧一起工作。
 """
-fourcc = cv.VideoWriter_fourcc(*'avc1')     # x264不支持，会默认转成 avc1, 不支持 hevc/x265
+fourcc = cv.VideoWriter_fourcc('X','V','I','D')     # x264不支持，会默认转成 avc1, XVID 会默认转成mp4v, avc1不支持 hevc/x265
 out = cv.VideoWriter('build/asaki.mp4', fourcc, fps, (width, height))
 
 ret, frame = cap.read()
