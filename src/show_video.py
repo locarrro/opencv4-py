@@ -1,7 +1,7 @@
 import numpy as np
 from cv2 import cv2 as cv
 
-cap = cv.VideoCapture('data/vtest.avi')
+cap = cv.VideoCapture('build/asaki.mp4')
 while cap.isOpened():
     ret, frame = cap.read()
     # 如果正确读取帧，ret为True

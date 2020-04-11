@@ -14,8 +14,8 @@ print(fps, width, height)
     然后传递帧率的数量和帧大小。最后一个是颜色标志。
     如果为 True，编码器期望颜色帧，否则它与灰度帧一起工作。
 """
-fourcc = cv.VideoWriter_fourcc(*'x265')
-out = cv.VideoWriter('build/asaki.mp4', fourcc, fps, (width, height))
+fourcc = cv.VideoWriter_fourcc(*'avc1')     # x254不支持，会默认转成 avc1, 不支持 hevc/x265
+out = cv.VideoWriter('build/asaki-hevc.mp4', fourcc, fps, (width, height))
 
 ret, frame = cap.read()
 while cap.isOpened():
@@ -24,8 +24,8 @@ while cap.isOpened():
     if not ret:
         print("Can't receive frame (stream end?). Exiting ...")
         break
-    # cv.imshow('frame', frame)       # 彩色输出
-    cv.waitKey(int(1000/fps))  # cv.waitKey( )
+    cv.imshow('frame', frame)       # 彩色输出
+    cv.waitKey(int(1000/fps))       # cv.waitKey( )
     out.write(frame)
 
 cap.release()
